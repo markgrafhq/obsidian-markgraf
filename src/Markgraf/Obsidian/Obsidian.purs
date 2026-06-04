@@ -8,6 +8,7 @@ module Markgraf.Obsidian.Obsidian
   , callTryParse
   , parseOk
   , parseError
+  , isDarkMode
   , mountEmbed
   , renderError
   , addRenderChild
@@ -73,6 +74,13 @@ foreign import parseErrorImpl :: ParseResult -> String
 
 parseError :: ParseResult -> String
 parseError = parseErrorImpl
+
+foreign import isDarkModeImpl :: Effect Boolean
+
+-- | Whether Obsidian is in a dark theme, so the player can pick a matching
+-- | palette. Read from the `theme-dark` class Obsidian toggles on `<body>`.
+isDarkMode :: Effect Boolean
+isDarkMode = isDarkModeImpl
 
 foreign import mountEmbedImpl :: Element -> String -> Effect Unit
 

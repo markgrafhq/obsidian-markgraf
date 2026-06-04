@@ -4,8 +4,8 @@ import Prelude
 
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
-import Markgraf.Obsidian.Obsidian (MarkdownContext, Plugin, addRenderChild, callTryParse, clearElement, lookupTryParse, mountEmbed, parseError, parseOk, registerCodeBlockProcessor, renderError)
-import Web.DOM.Element (Element)
+import Markgraf.Obsidian.Obsidian (MarkdownContext, Plugin, addRenderChild, callTryParse, clearElement, isDarkMode, lookupTryParse, mountEmbed, parseError, parseOk, registerCodeBlockProcessor, renderError)
+import Web.DOM.Element (Element, setAttribute)
 
 -- | Plugin entry point: register the processor that turns every ```markgraf
 -- | fence into a live player. Obsidian invokes this from the subclass in
@@ -25,8 +25,12 @@ renderBlock source el ctx = do
     Nothing -> mountLive
   where
   mountLive = do
+    matchTheme
     mountEmbed el source
     addRenderChild ctx el (clearElement el)
+  matchTheme = do
+    dark <- isDarkMode
+    setAttribute "data-markgraf-theme" (if dark then "dark" else "light") el
 
 -- | The embed's parser verdict for `source`: `Just message` when it fails to
 -- | parse, `Nothing` when it parses or the embed bundle has not loaded yet.

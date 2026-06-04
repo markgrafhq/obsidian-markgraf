@@ -10,6 +10,8 @@ export const registerCodeBlockProcessorImpl =
 export const windowMarkgrafTryParseFnImpl = () =>
   (window.markgraf && window.markgraf.tryParse) || null;
 
+export const isDarkModeImpl = () => document.body.classList.contains("theme-dark");
+
 export const callTryParseImpl = (fn) => (src) => () => fn(src);
 
 export const parseOkImpl = (result) => result.ok;
