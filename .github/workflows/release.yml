@@ -1,0 +1,23 @@
+name: release
+
+# Fires when a GitHub Release is published. Builds the plugin and attaches the
+# three files Obsidian's updater downloads (main.js, manifest.json, styles.css)
+# to the release. The release tag must equal the version in manifest.json, as
+# the Obsidian community registry requires.
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - name: Attach plugin files to GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload "${{ github.event.release.tag_name }}" main.js manifest.json styles.css --clobber

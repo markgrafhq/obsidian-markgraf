@@ -1,0 +1,10 @@
+{
+  "id": "markgraf",
+  "name": "Markgraf",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Render markgraf fenced code blocks as live animated diagrams inside your notes.",
+  "author": "Mark Eibes",
+  "authorUrl": "https://github.com/markgrafhq",
+  "isDesktopOnly": true
+}

@@ -1,0 +1,14 @@
+package:
+  name: obsidian-markgraf
+  dependencies:
+    - effect
+    - maybe
+    - nullable
+    - prelude
+    - web-dom
+  build:
+    strict: true
+workspace:
+  packageSet:
+    registry: 73.2.0
+  extraPackages: {}

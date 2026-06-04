@@ -1,0 +1,16 @@
+package:
+  name: markgraf-obsidian-scripts
+  dependencies:
+    - console
+    - effect
+    - foldable-traversable
+    - integers
+    - maybe
+    - node-buffer
+    - node-fs
+    - prelude
+    - strings
+workspace:
+  packageSet:
+    registry: 73.2.0
+  extraPackages: {}
