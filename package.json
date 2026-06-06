@@ -14,7 +14,7 @@
     "dev": "bun run build:purs && bun run build:main"
   },
   "dependencies": {
-    "@markgrafhq/markgraf-embed": "^0.1.12"
+    "@markgrafhq/markgraf-embed": "^0.1.14"
   },
   "devDependencies": {
     "esbuild": "^0.28.0",

@@ -7,7 +7,7 @@ scrubbable animation.
 ```markgraf
 seed 1
 
-frame "a request arrives" {
+keyframe "a request arrives" {
   +node browser "Browser"
   +node server "Server"
   +edge browser server
@@ -15,7 +15,7 @@ frame "a request arrives" {
   browser -> server "GET /"
 }
 
-frame "the server answers" {
+keyframe "the server answers" {
   +node db "Database"
   +edge server db
 

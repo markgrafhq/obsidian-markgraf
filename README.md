@@ -7,7 +7,7 @@ animated diagrams** directly inside your Obsidian notes.
 ```markgraf
 seed 1
 
-frame "a request arrives" {
+keyframe "a request arrives" {
   +node browser "Browser"
   +node server "Server"
   +edge browser server
