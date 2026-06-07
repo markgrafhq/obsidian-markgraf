@@ -1,6 +1,6 @@
 {
   "name": "@markgrafhq/obsidian-markgraf",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "description": "Obsidian plugin that renders ```markgraf fenced code blocks as live animated diagrams inside notes.",
@@ -14,7 +14,7 @@
     "dev": "bun run build:purs && bun run build:main"
   },
   "dependencies": {
-    "@markgrafhq/markgraf-embed": "^0.1.14"
+    "@markgrafhq/markgraf-embed": "^0.1.15"
   },
   "devDependencies": {
     "esbuild": "^0.28.0",
