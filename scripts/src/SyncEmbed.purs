@@ -31,7 +31,7 @@ main = do
   writeTextFile UTF8 "vendor/markgraf-embed.js" (escapeNoncharacters embedJs)
   css <- readTextFile UTF8 (src <> "/markgraf-embed.css")
   fontUrl <- inlineFont
-  writeTextFile UTF8 "styles.css" (replaceAll fontRef (Replacement fontUrl) css <> errorCss)
+  writeTextFile UTF8 "styles.css" (replaceAll fontRef (Replacement fontUrl) css <> obsidianCss)
   log "synced markgraf-embed → vendor/markgraf-embed.js + styles.css"
   where
   fontRef = Pattern "./CommitMono-Regular.woff2"
@@ -42,9 +42,15 @@ inlineFont = do
   b64 <- Buffer.toString Base64 buf
   pure ("data:font/woff2;base64," <> b64)
 
-errorCss :: String
-errorCss =
-  "\n.markgraf-error{color:var(--text-error);white-space:pre-wrap;font-family:var(--font-monospace);}\n"
+-- Obsidian-specific styling appended to the embed stylesheet. Bar placement
+-- is the embed's job now (it flows below the canvas); here we only centre the
+-- player in the note and let it hug its graph, the way a figure sits in prose.
+obsidianCss :: String
+obsidianCss =
+  """
+.markgraf-error{color:var(--text-error);white-space:pre-wrap;font-family:var(--font-monospace);}
+.block-language-markgraf.markgraf-embed{width:fit-content;max-width:100%;margin-inline:auto;}
+"""
 
 -- Rewrites Unicode noncharacters (U+FFFE, U+FFFF, U+FDD0–U+FDEF) to `\uXXXX`
 -- escapes. purs-backend-es serialises the `￿` from `Bounded Char` as a raw
