@@ -84,8 +84,7 @@ isDarkMode = isDarkModeImpl
 
 foreign import mountEmbedImpl :: Element -> String -> Effect Unit
 
--- | Mount the live player into `el` via the embed's `window.markgraf.mount`,
--- | wiring the canvas-click play toggle the way the browser extension does.
+-- | Mount the live player into `el` via the embed's `window.markgraf.mount`.
 mountEmbed :: Element -> String -> Effect Unit
 mountEmbed = mountEmbedImpl
 

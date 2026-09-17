@@ -24,14 +24,6 @@ export const mountEmbedImpl = (el) => (src) => () => {
   const fn = window.markgraf && window.markgraf.mount;
   if (!fn) return;
   fn(el, src);
-  const playBtn = el.querySelector('[data-mg="play"]');
-  const stage = el.querySelector('[data-mg="stage"]');
-  if (playBtn && stage) {
-    stage.addEventListener("click", (ev) => {
-      ev.preventDefault();
-      playBtn.click();
-    });
-  }
 };
 
 export const renderErrorImpl = (el) => (message) => () => {
