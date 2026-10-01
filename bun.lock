@@ -5,7 +5,7 @@
     "": {
       "name": "@markgrafhq/obsidian-markgraf",
       "dependencies": {
-        "@markgrafhq/markgraf-embed": "0.0.44",
+        "@markgrafhq/markgraf-embed": "0.0.45",
       },
       "devDependencies": {
         "esbuild": "^0.28.0",
@@ -81,7 +81,7 @@
 
     "@marijn/find-cluster-break": ["@marijn/find-cluster-break@1.0.2", "", {}, "sha512-l0h88YhZFyKdXIFNfSWpyjStDjGHwZ/U7iobcK1cQQD8sejsONdQtTVU+1wVN1PBw40PiiHB1vA5S7VTfQiP9g=="],
 
-    "@markgrafhq/markgraf-embed": ["@markgrafhq/markgraf-embed@0.0.44", "", {}, "sha512-ohwxhp60UkaUhOolUiboNIsbSOzch+gF0XkESYm4fWAruhfBKIIDmwo9mnPsWCuyBHeT0Jg+IRJ0JFDxcXPynQ=="],
+    "@markgrafhq/markgraf-embed": ["@markgrafhq/markgraf-embed@0.0.45", "", {}, "sha512-Yu5A5h11EWDk5YLu9j0GFrWwUgeqkFt/+bTpH3vC9SwJP+/Cwaf/R9+SQfE4vn7/MYlYDbsuZuauvU2jSlkagA=="],
 
     "@nodelib/fs.scandir": ["@nodelib/fs.scandir@4.0.1", "", { "dependencies": { "@nodelib/fs.stat": "4.0.0", "run-parallel": "^1.2.0" } }, "sha512-vAkI715yhnmiPupY+dq+xenu5Tdf2TBQ66jLvBIcCddtz+5Q8LbMKaf9CIJJreez8fQ8fgaY+RaywQx8RJIWpw=="],
 
